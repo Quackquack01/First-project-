@@ -5,17 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Prompt Library</title>
 <style>
-body{font-family:Arial,sans-serif;background:#111;color:#fff;text-align:center;padding:50px;}
-h1{color:#00d4ff;}
-.card{max-width:700px;margin:auto;background:#222;padding:20px;border-radius:12px;}
-button{padding:12px 20px;font-size:16px;border:none;border-radius:8px;cursor:pointer;}
+body{
+font-family:Arial,sans-serif;
+margin:0;
+padding:20px;
+background:#111;
+color:white;
+transition:0.3s;
+}
+.light{
+background:#f5f5f5;
+color:#111;
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+input{
+width:100%;
+padding:10px;
+margin:20px 0;
+border-radius:8px;
+border:none;
+}
+button{
+padding:8px 12px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin:5px;
+}
+.card{
+background:#222;
+padding:15px;
+margin:15px 0;
+border-radius:12px;
+}
+.light .card{
+background:white;
+}
+.category{
+font-size:12px;
+color:#00d4ff;
+}
 </style>
 </head>
 <body>
+
+<header>
+<h1>🤖 AI Prompt Library</h1>
+<button onclick="toggleTheme()">🌙</button>
+</header>
+
+<input type="text" id="search" placeholder="Search prompts..." onkeyup="searchPrompt()">
+
 <div class="card">
-<h1>AI Prompt Library</h1>
-<p>A free collection of prompts for ChatGPT, Claude and Gemini.</p>
-<button>Explore Prompts</button>
+<div class="category">Writing</div>
+<p id="p1">Write a professional email from these points.</p>
+<button onclick="copyPrompt('p1')">📋 Copy</button>
 </div>
+
+<div class="card">
+<div class="category">Coding</div>
+<p id="p2">Review this code and suggest improvements.</p>
+<button onclick="copyPrompt('p2')">📋 Copy</button>
+</div>
+
+<div class="card">
+<div class="category">Study</div>
+<p id="p3">Summarize these notes into easy flashcards.</p>
+<button onclick="copyPrompt('p3')">📋 Copy</button>
+</div>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle("light");
+}
+function copyPrompt(id){
+navigator.clipboard.writeText(document.getElementById(id).innerText);
+alert("Prompt copied!");
+}
+function searchPrompt(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
+for(let card of cards){
+card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
+}
+}
+</script>
+
 </body>
 </html>
