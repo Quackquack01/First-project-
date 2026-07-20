@@ -61,3 +61,7 @@ https://quackquack01.github.io/First-project-/
 Created and maintained by **Quackquack01**.
 
 ⭐ If you like this project, consider starring the repository!
+
+## 📸 Project Screenshot
+
+![Project Screenshot](screenshot.png)
