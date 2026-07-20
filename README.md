@@ -19,3 +19,11 @@ Contributions, suggestions, and bug reports are welcome. Feel free to fork the r
 
 ## License
 This project is licensed under the MIT License.
+
+## Roadmap
+
+- Add 100+ AI prompts
+- Organize prompts by category
+- Improve documentation
+- Accept community contributions
+- Launch version 1.0
