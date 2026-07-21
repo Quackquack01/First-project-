@@ -57,3 +57,25 @@ search.addEventListener("input", () => {
     });
 
 });
+
+const toast = document.getElementById("toast");
+
+document.querySelectorAll(".card button").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        navigator.clipboard.writeText(
+            button.parentElement.innerText
+        );
+
+        toast.classList.add("show");
+
+        setTimeout(()=>{
+
+            toast.classList.remove("show");
+
+        },2000);
+
+    });
+
+});
