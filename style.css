@@ -123,3 +123,26 @@ main{
 .card button:hover{
     transform:scale(1.05);
 }
+
+/* Toast Notification */
+
+#toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(100px);
+    background:#121212;
+    color:#fff;
+    padding:14px 22px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    opacity:0;
+    transition:.4s;
+    z-index:99999;
+}
+
+#toast.show{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
