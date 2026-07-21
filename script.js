@@ -79,3 +79,18 @@ document.querySelectorAll(".card button").forEach(button=>{
     });
 
 });
+
+document.querySelectorAll(".favBtn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        button.classList.toggle("active");
+
+        button.textContent =
+            button.classList.contains("active")
+            ? "❤️"
+            : "🤍";
+
+    });
+
+});
