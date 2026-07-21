@@ -104,3 +104,30 @@ favoriteButtons.forEach((button, index) => {
     });
 
 });
+
+// Category Filter
+
+const filters = document.querySelectorAll(".filter");
+
+filters.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filters.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll(".card").forEach(card => {
+
+            if (filter === "all" || card.dataset.category === filter) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
