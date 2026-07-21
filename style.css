@@ -174,3 +174,20 @@ main{
 .favBtn.active{
     background:#ff4d6d;
 }
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+}
+
+.logo h1{
+    font-size:2rem;
+    font-weight:700;
+}
