@@ -1,99 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Prompt Library</title>
-<style>
-body{
-font-family:Arial,sans-serif;
-margin:0;
-padding:20px;
-background:#111;
-color:white;
-transition:0.3s;
-}
-.light{
-background:#f5f5f5;
-color:#111;
-}
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-input{
-width:100%;
-padding:10px;
-margin:20px 0;
-border-radius:8px;
-border:none;
-}
-button{
-padding:8px 12px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-margin:5px;
-}
-.card{
-background:#222;
-padding:15px;
-margin:15px 0;
-border-radius:12px;
-}
-.light .card{
-background:white;
-}
-.category{
-font-size:12px;
-color:#00d4ff;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Library</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-<h1>🤖 AI Prompt Library</h1>
-<button onclick="toggleTheme()">🌙</button>
-</header>
+    <header>
+        <h1>🤖 AI Prompt Library</h1>
+        <button id="themeToggle">🌙</button>
+    </header>
 
-<input type="text" id="search" placeholder="Search prompts..." onkeyup="searchPrompt()">
+    <main>
 
-<div class="card">
-<div class="category">Writing</div>
-<p id="p1">Write a professional email from these points.</p>
-<button onclick="copyPrompt('p1')">📋 Copy</button>
-</div>
+        <input
+            type="text"
+            id="search"
+            placeholder="Search prompts..."
+        >
 
-<div class="card">
-<div class="category">Coding</div>
-<p id="p2">Review this code and suggest improvements.</p>
-<button onclick="copyPrompt('p2')">📋 Copy</button>
-</div>
+        <div class="categories">
+            <button>All</button>
+            <button>Writing</button>
+            <button>Coding</button>
+            <button>Study</button>
+            <button>Business</button>
+        </div>
 
-<div class="card">
-<div class="category">Study</div>
-<p id="p3">Summarize these notes into easy flashcards.</p>
-<button onclick="copyPrompt('p3')">📋 Copy</button>
-</div>
+        <div id="promptContainer">
 
-<script>
-function toggleTheme(){
-document.body.classList.toggle("light");
-}
-function copyPrompt(id){
-navigator.clipboard.writeText(document.getElementById(id).innerText);
-alert("Prompt copied!");
-}
-function searchPrompt(){
-let input=document.getElementById("search").value.toLowerCase();
-let cards=document.getElementsByClassName("card");
-for(let card of cards){
-card.style.display=card.innerText.toLowerCase().includes(input)?"block":"none";
-}
-}
-</script>
+            <div class="card">
+                <h2>Professional Email</h2>
+                <p>Write a professional email from the following points.</p>
+
+                <button>Copy</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
