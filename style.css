@@ -146,3 +146,31 @@ main{
     opacity:1;
     transform:translateX(-50%) translateY(0);
 }
+
+.actions{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.copyBtn{
+    flex:1;
+}
+
+.favBtn{
+    width:48px;
+    border:none;
+    border-radius:12px;
+    background:#181818;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.favBtn:hover{
+    transform:scale(1.08);
+}
+
+.favBtn.active{
+    background:#ff4d6d;
+}
