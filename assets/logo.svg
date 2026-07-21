@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+  <rect width="220" height="220" rx="40" fill="#050505"/>
+  <circle cx="110" cy="110" r="70" fill="#4F8CFF"/>
+  <text x="110" y="128" text-anchor="middle"
+        font-size="70"
+        font-family="Arial"
+        fill="white">🤖</text>
+</svg>
