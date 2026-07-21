@@ -277,3 +277,36 @@ footer a:hover{
     transform:translateY(-3px);
     box-shadow:0 10px 25px rgba(79,140,255,.35);
 }
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    width:min(1100px,92%);
+    margin:40px auto;
+}
+
+.statCard{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    transition:.3s;
+}
+
+.statCard:hover{
+    transform:translateY(-6px);
+    border-color:#4F8CFF;
+}
+
+.statCard h3{
+    font-size:2rem;
+    color:#4F8CFF;
+    margin-bottom:10px;
+}
+
+.statCard p{
+    color:#999;
+}
