@@ -243,3 +243,37 @@ footer a:hover{
     background:#8b5cf6;
     color:#fff;
 }
+
+.hero{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+.hero h2{
+    font-size:2.8rem;
+    margin-bottom:18px;
+    line-height:1.2;
+}
+
+.hero p{
+    max-width:700px;
+    margin:0 auto 30px;
+    color:#9ca3af;
+    font-size:18px;
+}
+
+.heroBtn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:14px;
+    background:#4F8CFF;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.heroBtn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(79,140,255,.35);
+}
