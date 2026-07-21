@@ -1,3 +1,26 @@
+## 🚀 Live Demo
+
+Visit the live website here:
+
+https://quackquack01.github.io/First-project-/
+
+## ✨ Features
+
+- 🌑 Dark & Light Mode
+- 🔍 Live Search
+- 📂 Category Filters
+- 📋 One-click Copy
+- ❤️ Favorite Prompts
+- 💾 Saved Favorites
+- 📱 Responsive Design
+- 🎨 Hero Section
+- 📊 Statistics Dashboard
+- 🌐 GitHub Pages
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
 # First-project-
 
 First-project- is an open-source repository created to learn GitHub, practice version control, and build useful software projects. This repository will gradually include sample code, documentation, and experiments that help developers and beginners understand modern development workflows.
