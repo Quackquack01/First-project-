@@ -214,3 +214,32 @@ footer a{
 footer a:hover{
     color:#78A9FF;
 }
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:12px;
+}
+
+.writing{
+    background:#3b82f6;
+    color:#fff;
+}
+
+.coding{
+    background:#10b981;
+    color:#fff;
+}
+
+.study{
+    background:#f59e0b;
+    color:#fff;
+}
+
+.business{
+    background:#8b5cf6;
+    color:#fff;
+}
