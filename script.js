@@ -80,16 +80,26 @@ document.querySelectorAll(".card button").forEach(button=>{
 
 });
 
-document.querySelectorAll(".favBtn").forEach(button => {
+// Favorite Button with Local Storage
+
+const favoriteButtons = document.querySelectorAll(".favBtn");
+
+favoriteButtons.forEach((button, index) => {
+
+    if (localStorage.getItem("fav" + index) === "true") {
+        button.classList.add("active");
+        button.textContent = "❤️";
+    }
 
     button.addEventListener("click", () => {
 
         button.classList.toggle("active");
 
-        button.textContent =
-            button.classList.contains("active")
-            ? "❤️"
-            : "🤍";
+        const active = button.classList.contains("active");
+
+        button.textContent = active ? "❤️" : "🤍";
+
+        localStorage.setItem("fav" + index, active);
 
     });
 
