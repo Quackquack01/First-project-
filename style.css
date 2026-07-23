@@ -310,3 +310,54 @@ footer a:hover{
 .statCard p{
     color:#999;
 }
+
+/* ======== V2.0 Premium Hero ======== */
+
+.heroBadge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(79,140,255,.15);
+    border:1px solid rgba(79,140,255,.35);
+    color:#7fb3ff;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:24px;
+}
+
+.heroButtons{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.heroBtn.secondary{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.heroBtn.secondary:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.card{
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.card:hover{
+    box-shadow:0 25px 60px rgba(79,140,255,.25);
+}
+
+#search{
+    transition:.3s;
+}
+
+#search:focus{
+    border:1px solid #4F8CFF;
+    box-shadow:0 0 25px rgba(79,140,255,.35);
+}
+
+html{
+    scroll-behavior:smooth;
+}
