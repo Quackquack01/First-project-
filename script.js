@@ -29,14 +29,12 @@ themeToggle.addEventListener("click", (e) => {
         dark = !dark;
 
         if (dark) {
-            body.style.background = "#050505";
-            body.style.color = "#ffffff";
-            themeToggle.textContent = "🌙";
-        } else {
-            body.style.background = "#f5f5f5";
-            body.style.color = "#111111";
-            themeToggle.textContent = "☀️";
-        }
+    body.classList.remove("light");
+    themeToggle.textContent = "🌙";
+} else {
+    body.classList.add("light");
+    themeToggle.textContent = "☀️";
+}
     }, 250);
 });
 
