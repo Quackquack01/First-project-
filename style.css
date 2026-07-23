@@ -9,12 +9,6 @@
 }
 
 body{
-    background:#050505;
-    color:#fff;
-    min-height:100vh;
-    transition:background .6s ease,color .6s ease;
-}
-body{
     background:
         radial-gradient(circle at top left, rgba(79,140,255,.15), transparent 35%),
         radial-gradient(circle at bottom right, rgba(139,92,246,.15), transparent 35%),
@@ -470,6 +464,21 @@ body.light .categories button{
 
 body.light footer{
     border-top:1px solid rgba(0,0,0,.08);
+}
+
+
+/* Theme-specific Hero Title */
+
+body:not(.light) .hero h2{
+    background:linear-gradient(90deg,#ffffff,#7fb3ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+body.light .hero h2{
+    background:linear-gradient(90deg,#1e293b,#3b82f6,#7c3aed);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 body.light footer p{
