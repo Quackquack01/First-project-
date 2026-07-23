@@ -270,9 +270,9 @@ footer a:hover{
 
 .hero h2{
     font-size:clamp(2.5rem,5vw,4rem);
-    margin-bottom:18px;
     line-height:1.1;
-    background:linear-gradient(90deg,#ffffff,#7fb3ff,#8b5cf6);
+    margin-bottom:18px;
+    background:linear-gradient(90deg,#1e293b,#3b82f6,#7c3aed);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -405,4 +405,28 @@ html{
 
 .hero{
     animation:floatCard 6s ease-in-out infinite;
+}
+
+/* Light Theme Improvements */
+
+body.light .heroBtn{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+}
+
+body.light .heroBtn.secondary{
+    background:#fff;
+    color:#111827;
+    border:1px solid #d1d5db;
+}
+
+body.light .hero p{
+    color:#4b5563;
+}
+
+body.light .statCard{
+    background:rgba(255,255,255,.85);
+    border:1px solid rgba(0,0,0,.08);
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
 }
