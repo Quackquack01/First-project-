@@ -285,19 +285,29 @@ footer a:hover{
 }
 
 .heroBtn{
-    display:inline-block;
-    padding:14px 28px;
-    border-radius:14px;
-    background:#4F8CFF;
-    color:white;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:16px 30px;
+    border-radius:18px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    color:#fff;
     text-decoration:none;
     font-weight:600;
-    transition:.3s;
+    transition:all .45s cubic-bezier(.22,1,.36,1);
 }
 
 .heroBtn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(79,140,255,.35);
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 18px 45px rgba(79,140,255,.25);
+}
+
+.heroBtn:active{
+    transform:scale(.96);
 }
 
 .stats{
@@ -382,4 +392,17 @@ footer a:hover{
 
 html{
     scroll-behavior:smooth;
+}
+
+@keyframes floatCard{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-6px);
+    }
+}
+
+.hero{
+    animation:floatCard 6s ease-in-out infinite;
 }
