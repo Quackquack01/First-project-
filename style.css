@@ -492,3 +492,10 @@ body.light .hero h2{
 body.light footer p{
     color:#6b7280;
 }
+
+.dev-note{
+    margin:12px 0;
+    font-size:14px;
+    color:#9ca3af;
+    line-height:1.6;
+}
