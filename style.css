@@ -217,6 +217,16 @@ main{
     display:flex;
     align-items:center;
     gap:18px;
+    min-width:0;
+}
+
+.logo h1{
+    font-size:clamp(2rem,5vw,4rem);
+    white-space:nowrap;
+}
+
+#themeToggle{
+    flex-shrink:0;
 }
 
 .logo img{
