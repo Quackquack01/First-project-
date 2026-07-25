@@ -18,11 +18,17 @@ body{
     transition:background .6s ease,color .6s ease;
 }
 
-header{
+.header{
+    width:100%;
+    padding:24px 0;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:0 auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:24px;
 }
 
 h1{
