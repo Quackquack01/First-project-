@@ -187,7 +187,7 @@ modalShare.addEventListener("click", async () => {
         });
     } else {
         await navigator.clipboard.writeText(content);
-        alert("Prompt
+        showToast("✅ Prompt copied!");
 
 // Close modal with Escape key
 document.addEventListener("keydown", (e) => {
@@ -195,3 +195,15 @@ document.addEventListener("keydown", (e) => {
         modal.classList.remove("active");
     }
 });
+
+const toast = document.getElementById("toast");
+const toastMessage = document.getElementById("toastMessage");
+
+function showToast(message){
+    toastMessage.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}
