@@ -188,3 +188,10 @@ modalShare.addEventListener("click", async () => {
     } else {
         await navigator.clipboard.writeText(content);
         alert("Prompt
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        modal.classList.remove("active");
+    }
+});
