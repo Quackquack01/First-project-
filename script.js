@@ -129,3 +129,62 @@ filters.forEach(button => {
     });
 
 });
+
+// ===== Premium Prompt Modal =====
+
+const modal = document.getElementById("promptModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const closeModal = document.getElementById("closeModal");
+const modalCopy = document.getElementById("modalCopy");
+const modalShare = document.getElementById("modalShare");
+
+// Open modal when a prompt card is clicked
+document.querySelectorAll(".prompt-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const title = card.querySelector("h3").innerText;
+        const text = card.querySelector("p").innerText;
+
+        modalTitle.textContent = title;
+        modalText.textContent = text;
+
+        modal.classList.add("active");
+    });
+});
+
+// Close modal
+closeModal.addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+// Close when clicking outside
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+});
+
+// Copy prompt
+modalCopy.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(
+        `${modalTitle.textContent}\n\n${modalText.textContent}`
+    );
+
+    modalCopy.textContent = "✅ Copied!";
+    setTimeout(() => {
+        modalCopy.textContent = "📋 Copy Prompt";
+    }, 1500);
+});
+
+// Share prompt
+modalShare.addEventListener("click", async () => {
+    const content = `${modalTitle.textContent}\n\n${modalText.textContent}`;
+
+    if (navigator.share) {
+        navigator.share({
+            title: modalTitle.textContent,
+            text: content
+        });
+    } else {
+        await navigator.clipboard.writeText(content);
+        alert("Prompt
