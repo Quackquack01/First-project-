@@ -588,3 +588,82 @@ body.light footer p{
 .featuredBtn:hover{
     transform:translateY(-3px);
 }
+
+/* ===== Premium Prompt Modal ===== */
+
+.modal{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(12px);
+    z-index:10000;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modalContent{
+    width:min(90%,650px);
+    background:rgba(20,20,20,.95);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+    animation:modalPop .3s ease;
+}
+
+@keyframes modalPop{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+#closeModal{
+    float:right;
+    border:none;
+    background:none;
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+}
+
+#modalTitle{
+    margin-bottom:16px;
+}
+
+#modalText{
+    line-height:1.8;
+    color:#bdbdbd;
+    margin-bottom:24px;
+}
+
+.modalButtons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.modalButtons button{
+    flex:1;
+    border:none;
+    border-radius:14px;
+    padding:14px;
+    cursor:pointer;
+    font-weight:600;
+    background:linear-gradient(135deg,#4f7cff,#7b61ff);
+    color:#fff;
+    transition:.3s;
+}
+
+.modalButtons button:hover{
+    transform:translateY(-2px);
+}
