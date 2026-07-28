@@ -706,3 +706,33 @@ body.light footer p{
     opacity:1;
     transform:translateY(0);
 }
+
+/* =========================
+   Theme Reveal Animation
+========================= */
+
+#themeReveal{
+    position:fixed;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    pointer-events:none;
+    transform:scale(0);
+    opacity:0;
+    z-index:99999;
+}
+
+#themeReveal.reveal{
+    animation:themeReveal .5s ease forwards;
+}
+
+@keyframes themeReveal{
+    0%{
+        transform:scale(0);
+        opacity:.7;
+    }
+    100%{
+        transform:scale(120);
+        opacity:0;
+    }
+}
