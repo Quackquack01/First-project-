@@ -200,34 +200,3 @@ document.addEventListener("keydown", (e) => {
 });
 
 const toastMessage = document.getElementById("toastMessage");
-
-function showToast(message) {
-    if (toastMessage) {
-        toastMessage.textContent = message;
-    }
-
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2000);
-}
-
-// Close modal with Escape key
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        modal.classList.remove("active");
-    }
-});
-
-const toast = document.getElementById("toast");
-const toastMessage = document.getElementById("toastMessage");
-
-function showToast(message){
-    toastMessage.textContent = message;
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2000);
-}
