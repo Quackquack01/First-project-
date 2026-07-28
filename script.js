@@ -2,39 +2,39 @@ const themeToggle = document.getElementById("themeToggle");
 const themeReveal = document.getElementById("themeReveal");
 const body = document.body;
 
-let dark = true;
+// Load saved theme
+let dark = localStorage.getItem("theme") !== "light";
 
-themeToggle.addEventListener("click", (e) => {
+if (!dark) {
+    body.classList.add("light");
+    themeToggle.textContent = "☀️";
+} else {
+    body.classList.remove("light");
+    themeToggle.textContent = "🌙";
+}
 
-    // Position the reveal circle where the button was clicked
-    const rect = themeToggle.getBoundingClientRect();
+themeToggle.addEventListener("click", () => {
 
-    themeReveal.style.left = rect.left + rect.width / 2 - 10 + "px";
-    themeReveal.style.top = rect.top + rect.height / 2 - 10 + "px";
+    if (themeReveal) {
+        const rect = themeToggle.getBoundingClientRect();
 
-    // Set the reveal color
-    if (dark) {
-        themeReveal.style.background = "#ffffff";
-    } else {
-        themeReveal.style.background = "#050505";
+        themeReveal.style.left = rect.left + rect.width / 2 - 10 + "px";
+        themeReveal.style.top = rect.top + rect.height / 2 - 10 + "px";
+
+        themeReveal.style.background = dark ? "#ffffff" : "#050505";
+
+        themeReveal.classList.remove("reveal");
+        void themeReveal.offsetWidth;
+        themeReveal.classList.add("reveal");
     }
 
-    // Restart animation
-    themeReveal.classList.remove("reveal");
-    void themeReveal.offsetWidth;
-    themeReveal.classList.add("reveal");
-
-    // Change theme after a short delay
     setTimeout(() => {
         dark = !dark;
 
-        if (dark) {
-    body.classList.remove("light");
-    themeToggle.textContent = "🌙";
-} else {
-    body.classList.add("light");
-    themeToggle.textContent = "☀️";
-}
+        body.classList.toggle("light", !dark);
+        themeToggle.textContent = dark ? "🌙" : "☀️";
+
+        localStorage.setItem("theme", dark ? "dark" : "light");
     }, 250);
 });
 
