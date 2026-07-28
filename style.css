@@ -566,6 +566,15 @@ body.light footer p{
 .featured h2{
     margin:12px 0;
     font-size:2rem;
+    background:linear-gradient(90deg,#ffffff,#7fb3ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.featured .badge{
+    background:rgba(79,140,255,.15);
+    color:#7fb3ff;
+    border:1px solid rgba(79,140,255,.35);
 }
 
 .featured p{
