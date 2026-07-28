@@ -140,9 +140,9 @@ const modalCopy = document.getElementById("modalCopy");
 const modalShare = document.getElementById("modalShare");
 
 // Open modal when a prompt card is clicked
-document.querySelectorAll(".prompt-card").forEach(card => {
+document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", () => {
-        const title = card.querySelector("h3").innerText;
+        const title = card.querySelector("h2").innerText;
         const text = card.querySelector("p").innerText;
 
         modalTitle.textContent = title;
@@ -177,17 +177,41 @@ modalCopy.addEventListener("click", async () => {
 });
 
 // Share prompt
+// Share prompt
 modalShare.addEventListener("click", async () => {
     const content = `${modalTitle.textContent}\n\n${modalText.textContent}`;
 
     if (navigator.share) {
-        navigator.share({
+        await navigator.share({
             title: modalTitle.textContent,
             text: content
         });
     } else {
         await navigator.clipboard.writeText(content);
-        showToast("✅ Prompt copied!");
+        showToast("📤 Prompt copied!");
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        modal.classList.remove("active");
+    }
+});
+
+const toastMessage = document.getElementById("toastMessage");
+
+function showToast(message) {
+    if (toastMessage) {
+        toastMessage.textContent = message;
+    }
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}
 
 // Close modal with Escape key
 document.addEventListener("keydown", (e) => {
