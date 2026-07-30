@@ -216,3 +216,24 @@ const observer = new IntersectionObserver((entries)=>{
 document.querySelectorAll(".card").forEach(card=>{
     observer.observe(card);
 });
+
+/* ===== Ripple Effect ===== */
+
+document.querySelectorAll("button,.heroBtn,.featuredBtn").forEach(btn=>{
+    btn.addEventListener("click",function(e){
+        const ripple=document.createElement("span");
+        ripple.className="ripple";
+
+        const size=Math.max(this.clientWidth,this.clientHeight);
+
+        ripple.style.width=size+"px";
+        ripple.style.height=size+"px";
+
+        ripple.style.left=e.offsetX-size/2+"px";
+        ripple.style.top=e.offsetY-size/2+"px";
+
+        this.appendChild(ripple);
+
+        setTimeout(()=>ripple.remove(),600);
+    });
+});
