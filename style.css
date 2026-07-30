@@ -877,3 +877,16 @@ button,
 #backToTop:hover{
     transform:translateY(-3px) scale(1.08);
 }
+
+/* ===== Result Counter ===== */
+
+#resultCount{
+    margin:10px 0 18px;
+    color:#9ca3af;
+    font-size:14px;
+    font-weight:500;
+}
+
+body.light #resultCount{
+    color:#6b7280;
+}
