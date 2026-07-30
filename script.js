@@ -276,3 +276,31 @@ search.addEventListener("input", updateResultCount);
 filters.forEach(button=>{
     button.addEventListener("click", updateResultCount);
 });
+
+/* ===== Keyboard Shortcuts ===== */
+
+document.addEventListener("keydown",(e)=>{
+
+    // Focus search with "/"
+    if(
+        e.key === "/" &&
+        document.activeElement.tagName !== "INPUT" &&
+        document.activeElement.tagName !== "TEXTAREA"
+    ){
+        e.preventDefault();
+        search.focus();
+    }
+
+    // Clear search with Escape
+    if(e.key === "Escape"){
+
+        search.value="";
+
+        document.querySelector('.filter.active')?.click();
+
+        filterPrompts();
+
+        search.blur();
+    }
+
+});
