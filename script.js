@@ -256,3 +256,23 @@ backToTop.addEventListener("click",()=>{
         behavior:"smooth"
     });
 });
+
+/* ===== Result Counter ===== */
+
+const resultCount = document.getElementById("resultCount");
+
+function updateResultCount(){
+    const visibleCards = [...document.querySelectorAll(".card")]
+        .filter(card => card.style.display !== "none");
+
+    resultCount.textContent =
+        `Showing ${visibleCards.length} prompt${visibleCards.length !== 1 ? "s" : ""}`;
+}
+
+updateResultCount();
+
+search.addEventListener("input", updateResultCount);
+
+filters.forEach(button=>{
+    button.addEventListener("click", updateResultCount);
+});
