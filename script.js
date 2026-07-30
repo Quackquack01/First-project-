@@ -170,9 +170,14 @@ modalCopy.addEventListener("click", async () => {
         `${modalTitle.textContent}\n\n${modalText.textContent}`
     );
 
+    showToast("📋 Prompt copied!");
+
     modalCopy.textContent = "✅ Copied!";
+    modalCopy.disabled = true;
+
     setTimeout(() => {
         modalCopy.textContent = "📋 Copy Prompt";
+        modalCopy.disabled = false;
     }, 1500);
 });
 
