@@ -890,3 +890,33 @@ button,
 body.light #resultCount{
     color:#6b7280;
 }
+
+/* ===== Back To Top ===== */
+
+#backToTop{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:52px;
+    height:52px;
+    border:none;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4f7cff,#7b61ff);
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transition:all .3s ease;
+    box-shadow:0 12px 30px rgba(79,124,255,.35);
+    z-index:9999;
+}
+
+#backToTop.show{
+    opacity:1;
+    visibility:visible;
+}
+
+#backToTop:hover{
+    transform:translateY(-4px) scale(1.08);
+}
