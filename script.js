@@ -165,20 +165,23 @@ modal.addEventListener("click", (e) => {
 });
 
 // Copy prompt
-modalCopy.addEventListener("click", async () => {
+button.addEventListener("click", async () => {
+
     await navigator.clipboard.writeText(
-        `${modalTitle.textContent}\n\n${modalText.textContent}`
+        button.parentElement.innerText
     );
 
-    showToast("📋 Prompt copied!");
+    button.textContent = "✅ Copied!";
+    button.disabled = true;
 
-    modalCopy.textContent = "✅ Copied!";
-    modalCopy.disabled = true;
+    toast.classList.add("show");
 
     setTimeout(() => {
-        modalCopy.textContent = "📋 Copy Prompt";
-        modalCopy.disabled = false;
-    }, 1500);
+        toast.classList.remove("show");
+        button.textContent = "📋 Copy";
+        button.disabled = false;
+    }, 2000);
+
 });
 
 // Share prompt
