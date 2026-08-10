@@ -116,12 +116,20 @@ filters.forEach(button => {
 
         const filter = button.dataset.filter;
 
-        document.querySelectorAll(".card").forEach(card => {
+        document.querySelectorAll(".card").forEach((card, index) => {
 
-            if (filter === "all" || card.dataset.category === filter) {
+            if (filter === "all") {
                 card.style.display = "";
-            } else {
-                card.style.display = "none";
+            }
+
+            else if (filter === "favorites") {
+                const isFav = localStorage.getItem("fav" + index) === "true";
+                card.style.display = isFav ? "" : "none";
+            }
+
+            else {
+                card.style.display =
+                    card.dataset.category === filter ? "" : "none";
             }
 
         });
