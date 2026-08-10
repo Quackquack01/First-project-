@@ -953,3 +953,26 @@ body.light #resultCount{
 #backToTop:hover{
     transform:translateY(-4px);
 }
+
+/* ===== Floating Navbar ===== */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    transition:all .3s ease;
+}
+
+.header.scrolled{
+    background:rgba(10,10,10,.6);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Light Mode Navbar */
+
+body.light .header.scrolled{
+    background:rgba(255,255,255,.7);
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
