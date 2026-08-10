@@ -42,18 +42,8 @@ themeToggle.addEventListener("click", () => {
 const search = document.getElementById("search");
 
 search.addEventListener("input", () => {
-
-    const value = search.value.toLowerCase();
-
-    document.querySelectorAll(".card").forEach(card => {
-
-        card.style.display =
-            card.innerText.toLowerCase().includes(value)
-                ? ""
-                : "none";
-
-    });
-
+    searchValue = search.value.toLowerCase();
+    applyFilters();
 });
 
 const toast = document.getElementById("toast");
@@ -114,25 +104,9 @@ filters.forEach(button => {
         filters.forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
 
-        const filter = button.dataset.filter;
+        currentFilter = button.dataset.filter;
 
-        document.querySelectorAll(".card").forEach((card, index) => {
-
-            if (filter === "all") {
-                card.style.display = "";
-            }
-
-            else if (filter === "favorites") {
-                const isFav = localStorage.getItem("fav" + index) === "true";
-                card.style.display = isFav ? "" : "none";
-            }
-
-            else {
-                card.style.display =
-                    card.dataset.category === filter ? "" : "none";
-            }
-
-        });
+        applyFilters();
 
     });
 
